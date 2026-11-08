@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  background: #eaf0f5;
+  color: #263445;
+}
+
+.settings-panel {
+  width: min(460px, 100%);
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(35, 55, 75, 0.12);
+  transition: background 0.2s, color 0.2s;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #6483a0;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 27px;
+}
+
+.intro {
+  margin: 0 0 26px;
+  color: #64748b;
+}
+
+label {
+  display: block;
+  margin: 17px 0 8px;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #fff;
+  color: #263445;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 17px;
+  border: 0;
+  border-radius: 9px;
+  background: #426b91;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.94);
+}
+
+.notice {
+  min-height: 20px;
+  margin: 14px 0 0;
+  color: #64748b;
+}
+
+.notice.confirmed {
+  color: #16804a;
+  font-weight: bold;
+}
+
+.extra-section {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.subtle-button {
+  margin: 0;
+  background: #e8eef4;
+  color: #263445;
+}
+
+.extra-info {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(100, 130, 160, 0.1);
+}
+
+.extra-info h2 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.extra-info p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* Темна тема */
+.settings-panel.night-mode {
+  background: #263445;
+  color: #f8fafc;
+}
+
+.night-mode .intro,
+.night-mode .notice {
+  color: #cbd5e1;
+}
+
+.night-mode .extra-section {
+  border-color: #526174;
+}
+
+.night-mode .extra-info {
+  background: #35465a;
+}
+
+.night-mode .subtle-button {
+  background: #526174;
+  color: #fff;
+}
+
+/* М’ятна тема */
+.settings-panel.mint-mode {
+  background: #effaf5;
+  color: #245447;
+}
+
+.mint-mode .intro,
+.mint-mode .notice {
+  color: #527c70;
+}
+
+.mint-mode button:not(.subtle-button) {
+  background: #39836d;
+}
+
+.mint-mode .extra-info {
+  background: #d9f0e7;
+}

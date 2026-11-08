@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Налаштування профілю</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="settings-panel" id="profilePanel">
+    <p class="eyebrow">ОСОБИСТИЙ КАБІНЕТ</p>
+    <h1>Налаштування профілю</h1>
+    <p class="intro" id="greeting">Вітаємо у вашому профілі!</p>
+
+    <section class="form-section">
+      <label for="userName">Ваше ім’я</label>
+      <input id="userName" type="text" placeholder="Введіть ім’я">
+
+      <label for="colorScheme">Кольорова тема</label>
+      <select id="colorScheme">
+        <option value="light">Світла</option>
+        <option value="dark">Темна</option>
+        <option value="mint">М’ятна</option>
+      </select>
+
+      <button id="saveProfile" type="button">Підтвердити</button>
+      <p class="notice" id="resultMessage">Зміни ще не підтверджено.</p>
+    </section>
+
+    <section class="extra-section">
+      <button class="subtle-button" id="infoToggle" type="button">Показати додаткову інформацію</button>
+      <div class="extra-info is-hidden" id="extraInfo">
+        <h2>Додаткова інформація</h2>
+        <p>Тут можна розмістити короткий опис профілю, контактні дані або інші відомості.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
