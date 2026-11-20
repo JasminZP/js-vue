@@ -1,38 +1,71 @@
 let taskInput = document.querySelector("#taskInput");
-let addBtn = document.querySelector("#addBtn");
-let taskList = document.querySelector("#taskList");
+let addButton = document.querySelector("#addButton");
 let taskCounter = document.querySelector("#taskCounter");
+let taskList = document.querySelector("#taskList");
+
+
+function updateCounter() {
+    let count = taskList.querySelectorAll('li').length;
+    taskCounter.textContent = `${count}`;
+}
+
 
 function addTask() {
     let text = taskInput.value.trim()
+
     if (text === "") {
         alert("Please enter a task");
         return;
     }
     let li = document.createElement("li");
     li.classList.add("task");
-
-
     let span = document.createElement("span");
     span.classList.add("task-text");
     span.textContent = text;
 
-    let doneBtn = document.createElement("button");
-    doneBtn.textContent = "done";
+    let doneButton = document.createElement("button");
+    doneButton.textContent = "Done";
 
-    let editBtn = document.createElement("button");
-    editBtn.classList.add("edit-btn");
-    editBtn.textContent = "edit";
+    doneButton.addEventListener("click", () => {
+        li.classList.toggle("done");
+    })
 
-    let deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("delete-btn");
-    deleteBtn.textContent = "delete";
+    let editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    editButton.classList.add("edit-btn");
+
+    editButton.addEventListener("click", () => {
+        let newtext = prompt("Please enter task", span.textContent);
+        if (newtext === null) {
+            return;
+        }
+
+        if (newtext.trim() === "") {
+            alert("Please enter a task");
+            return;
+        }
+        span.textContent = newtext.trim();
+    });
+
+
+    let deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.classList.add("delete-btn");
+    deleteButton.addEventListener("click", () => {
+        let answer = confirm("Are you sure?");
+        if (answer) {
+            li.remove()
+            updateCounter();
+        }
+    });
 
 
 
-    li.append(span, doneBtn, editBtn, deleteBtn)
-    taskList.appendChild(li);
-    taskInput.value = "";
+    li.append(span, doneButton, editButton, deleteButton);
+    taskList.append(li);
+    updateCounter();
+
+    taskInput.value = '';
 }
 
-addBtn.addEventListener("click", addTask);
+addButton.addEventListener("click", addTask);

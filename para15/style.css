@@ -1,61 +1,63 @@
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-decoration: none;
     list-style: none;
 }
-
-body {
-    background: #eef2f7;
-    color: #202938;
+body{
+    background: #e3e0e0;
+    color: #353535;
 }
-.app {
-    max-width: 660px;
+.app{
+    max-width: 600px;
     margin: 60px auto;
-    padding: 30px;
-    background: #fff;
+    padding: 20px;
+    background: #fbfbfb;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
 }
-.form-row {
+.form-row{
     display: flex;
     gap: 10px;
 }
-input {
-    flex:1;
+input{
+    flex: 1;
     min-width: 0;
-    padding: 5px 10px;
-    border: 1px solid #bcc7d5;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #4a4a4a;
 }
-button {
+button{
     padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background: #3f8ce8;
-    color: white;
+    border: 0;
+    border-radius: 8px;
+    background: orange;
+    color: #fff;
     cursor: pointer;
 }
-.task {
+
+
+.task{
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 10px 0;
-    border-bottom: 1px solid #bcc7d5;
+    border-bottom: 1px solid #4a4a4a;
 }
-
-.task-text {
+.task-text{
     flex: 1;
     overflow-wrap: anywhere;
 }
-.task.done .task-text {
+.task.done .task-text{
     text-decoration: line-through;
-    color: #29dd5d;
+    color: #66e657;
 }
-.edit-btn {
-    background: #e8e138;
+.edit-btn{
+    background: #b17d1c;
 }
-.delete-btn {
+.delete-btn{
     background: #e74c3c;
 }
